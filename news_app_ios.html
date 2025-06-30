@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=375, initial-scale=1.0">
+  <title>News App Ios</title>
+  <link rel="stylesheet" href="news_app_ios.css">
+</head>
+<body>
+  <div class="app-wrapper">
+    <div class="status-bar">
+      <span class="status-time">9:41</span>
+      <span class="status-battery"></span>
+      <span class="status-wifi"></span>
+      <span class="status-cellular"></span>
+      <span class="status-record">12:48</span>
+      <span class="status-camera-indicator"></span>
+    </div>
+    <div class="weather">
+      <h1>날씨가 쌀쌀해요.<br>가벼운 자켓을 걸쳐보세요.</h1>
+    </div>
+    <div class="topics">
+      <span class="topic-label">관심 주제</span>
+      <span class="topic-count">5</span>
+      <span class="topic-label">새로운 뉴스</span>
+      <span class="topic-count">6</span>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon card-icon-pink"></div>
+        <div class="card-title">OpenAI, GPT-5 개발 공식 발표</div>
+        <div class="card-desc">OpenAI가 차세대 인공지능 모델 GPT-5의 개발을 공식적으로 발표하며, AI 업계의 기대를 모으고 있습니다.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon card-icon-blue"></div>
+        <div class="card-title">구글, 새로운 AI 검색 기능 공개</div>
+        <div class="card-desc">구글이 AI 기반의 검색 기능을 새롭게 선보이며, 사용자 경험을 한층 더 향상시킬 계획입니다.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon card-icon-green"></div>
+        <div class="card-title">삼성전자, AI 칩셋 대량 생산 돌입</div>
+        <div class="card-desc">삼성전자가 차세대 AI 칩셋의 대량 생산을 시작하며 글로벌 시장 공략에 나섰습니다.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon card-icon-yellow"></div>
+        <div class="card-title">네이버, 초거대 AI '하이퍼클로바X' 공개</div>
+        <div class="card-desc">네이버가 자체 개발한 초거대 AI '하이퍼클로바X'를 공개하며 국내 AI 경쟁에 불을 지폈습니다.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon card-icon-purple"></div>
+        <div class="card-title">AI로 진화하는 자율주행차</div>
+        <div class="card-desc">AI 기술의 발전으로 자율주행차의 안전성과 효율성이 크게 향상되고 있습니다.</div>
+      </div>
+    </div>
+    <div class="tab-bar">
+      <div class="tab active">홈</div>
+      <div class="tab">탐색</div>
+      <div class="tab">북마크</div>
+      <div class="tab">설정</div>
+    </div>
+    <div class="home-indicator"></div>
+  </div>
+  <script>
+    function updateStatusTime() {
+      const now = new Date();
+      let h = now.getHours();
+      let m = now.getMinutes();
+      if (h < 10) h = '0' + h;
+      if (m < 10) m = '0' + m;
+      document.querySelector('.status-time').textContent = `${h}:${m}`;
+    }
+    updateStatusTime();
+    setInterval(updateStatusTime, 1000 * 10);
+  </script>
+</body>
+</html>
